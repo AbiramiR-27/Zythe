@@ -92,18 +92,18 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg hover:shadow-xl transition-shadow;
   }
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(221 60% 15%) 50%, hsl(222 47% 6%) 100%);
+    background: linear-gradient(160deg, hsl(222 47% 4%) 0%, hsl(221 55% 12%) 40%, hsl(230 40% 8%) 100%);
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent;
   }
   .glow-primary {
-    box-shadow: 0 0 30px -5px hsl(221 83% 53% / 0.3);
+    box-shadow: 0 0 40px -8px hsl(221 83% 53% / 0.4);
   }
   .glow-accent {
-    box-shadow: 0 0 30px -5px hsl(25 95% 53% / 0.3);
+    box-shadow: 0 0 40px -8px hsl(25 95% 53% / 0.4);
   }
 }
