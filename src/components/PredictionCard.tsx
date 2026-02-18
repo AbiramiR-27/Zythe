@@ -24,7 +24,7 @@ export const PredictionCard = ({ prediction, index = 0 }: { prediction: Predicti
       transition={{ delay: index * 0.1, duration: 0.4 }}
     >
       <Link to={`/predictions/${prediction.id}`} className="block">
-        <div className="group glass-card rounded-xl p-5 transition-all hover:shadow-xl hover:-translate-y-1">
+        <div className="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
           <div className="mb-3 flex items-center justify-between">
             <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[prediction.category]}`}>
               {prediction.category}
@@ -36,7 +36,7 @@ export const PredictionCard = ({ prediction, index = 0 }: { prediction: Predicti
             )}
           </div>
 
-          <h3 className="mb-3 text-base font-semibold leading-snug group-hover:text-primary transition-colors">
+          <h3 className="mb-4 text-lg font-bold leading-snug group-hover:text-primary transition-colors">
             {prediction.question}
           </h3>
 
