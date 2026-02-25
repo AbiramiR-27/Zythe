@@ -1,0 +1,18 @@
+{
+  "name": "sapien-cre-workflow",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@chainlink/cre-sdk": "latest",
+    "@chainlink/cre-trigger-http": "latest",
+    "@chainlink/cre-trigger-evm-log": "latest",
+    "@chainlink/cre-capability-http": "latest",
+    "@chainlink/cre-capability-evm": "latest",
+    "@chainlink/cre-capability-secrets": "latest",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

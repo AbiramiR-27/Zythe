@@ -1,0 +1,10 @@
+version: 2
+workflows:
+  prediction-market-demo:
+    triggers:
+      - id: evm-log-trigger
+        type: evm:log
+        config:
+          contractAddress: ${MARKET_ADDRESS}
+          event: SettlementRequested(uint256 indexed marketId, address indexed requester)
+          chain: ethereum-sepolia
