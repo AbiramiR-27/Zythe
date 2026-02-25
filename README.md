@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# Human Predict Frontend
 
-## Project info
+Frontend application for a human-verified prediction market experience.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+This app provides:
 
-There are several ways of editing your application.
+- Prediction browsing and detail pages
+- Creating new predictions
+- Viewing resolved results
+- User profile view
+- Client-side "verification" state for voting flows
 
-**Use Lovable**
+Current data and verification behavior are demo-friendly and mostly in-memory:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Prediction/user data: `src/lib/data.ts`
+- Verification/vote context: `src/lib/verification.tsx`
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- React 18 + TypeScript
+- Vite
+- React Router
+- TanStack Query
+- Tailwind CSS
+- shadcn/ui + Radix UI
+- Vitest + Testing Library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js 18+
+- npm 9+
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Install and Run
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+cd Frontend
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server starts on the URL shown in your terminal (typically `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` — start local development server
+- `npm run build` — production build
+- `npm run build:dev` — development-mode build
+- `npm run preview` — preview production build locally
+- `npm run lint` — run ESLint
+- `npm run test` — run tests once (Vitest)
+- `npm run test:watch` — run tests in watch mode
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## App Routes
 
-## What technologies are used for this project?
+- `/` — landing page
+- `/predictions` — predictions list
+- `/predictions/:id` — prediction details
+- `/results` — resolved predictions/results
+- `/create` — create prediction page
+- `/profile` — user profile
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```text
+Frontend/
+	src/
+		components/      # Reusable UI and feature components
+		pages/           # Route-level pages
+		lib/             # Data, helpers, and verification context
+		hooks/           # Shared custom hooks
+		test/            # Test setup and examples
+```
 
-## How can I deploy this project?
+## Notes for Integration
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Replace mock data in `src/lib/data.ts` with API-backed state.
+- `VerificationProvider` currently uses local state; swap with real auth/identity and backend persistence.
+- If integrating smart contracts, add service modules in `src/lib/` and keep UI components presentational.
 
-## Can I connect a custom domain to my Lovable project?
+## Testing
 
-Yes, you can!
+```bash
+npm run test
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+For watch mode:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+npm run test:watch
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Contributing
+
+1. Create a feature branch
+2. Keep changes focused and lint-clean
+3. Add/update tests for behavior changes
+4. Open a PR with a clear summary
