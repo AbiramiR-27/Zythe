@@ -1,18 +1,23 @@
 {
-  "name": "sapien-cre-workflow",
+  "name": "backend",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Backend for the Human Predict project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
   "dependencies": {
-    "@chainlink/cre-sdk": "latest",
-    "@chainlink/cre-trigger-http": "latest",
-    "@chainlink/cre-trigger-evm-log": "latest",
-    "@chainlink/cre-capability-http": "latest",
-    "@chainlink/cre-capability-evm": "latest",
-    "@chainlink/cre-capability-secrets": "latest",
-    "zod": "^3.22.0"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.6.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
-  }
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0"
+  },
+  "author": "",
+  "license": "ISC"
 }
